@@ -1,0 +1,27 @@
+﻿@model OrderModel
+@{
+    ViewData["Title"] = "Order";
+}
+
+<form method="post" id="orderForm">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label asp-for="Material">Material</label>
+            <input asp-for="Material" class="form-control" placeholder="Material" maxlength="40" />
+            <span asp-validation-for="Material" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Quantity">Quantity</label>
+            <input asp-for="Quantity" class="form-control" placeholder="Quantity" type="number" min="0" step="any" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row mb-3 justify-content-center align-items-center">
+        <div class="col-md-4 ">
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+        </div>
+    </div>
+</form>
